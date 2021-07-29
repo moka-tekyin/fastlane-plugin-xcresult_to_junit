@@ -38,8 +38,8 @@ module Fastlane
 
         junit_folder = "#{output_path}/ios-#{device_udid}.junit"
         FileUtils.rm_rf junit_folder
-        FileUtils.mkdir junit_folder
-        FileUtils.mkdir "#{junit_folder}/attachments"
+        FileUtils.mkdir_p junit_folder
+        FileUtils.mkdir_p "#{junit_folder}/attachments"
         File.open("#{junit_folder}/device.json", 'w') do |f|
           f << device_details
         end
